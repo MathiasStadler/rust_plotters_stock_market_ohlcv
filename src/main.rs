@@ -1,7 +1,9 @@
 
-mod stock_market_ohlcv_test;
+
+mod main_test;
 
 
-// fn main() {
-//     println!("Hello, world!");
-// }
+pub fn greet() -> String {
+    String::from("Hello, World!")
+}
+
