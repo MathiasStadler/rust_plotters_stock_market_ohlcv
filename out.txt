@@ -1,0 +1,140 @@
+   Compiling rust_plotters_stock_market_ohlcv v0.1.0 (/home/user/workspace_rust/rust_plotters_stock_market_ohlcv)
+error[E0583]: file not found for module `stock_market_test_ohlcv_show_chart`
+ --> src/main.rs:1:1
+  |
+1 | mod stock_market_test_ohlcv_show_chart;
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = help: to create the module `stock_market_test_ohlcv_show_chart`, create file "src/stock_market_test_ohlcv_show_chart.rs" or "src/stock_market_test_ohlcv_show_chart/mod.rs"
+  = note: if there is a `mod stock_market_test_ohlcv_show_chart` elsewhere in the crate already, import it with `use crate::...` instead
+
+error[E0433]: failed to resolve: use of undeclared crate or module `plotters`
+ --> src/stock_market_ohlcv.rs:8:5
+  |
+8 | use plotters::{
+  |     ^^^^^^^^ use of undeclared crate or module `plotters`
+
+error[E0433]: failed to resolve: use of undeclared crate or module `rust_decimal`
+  --> src/stock_market_ohlcv.rs:18:5
+   |
+18 | use rust_decimal::{
+   |     ^^^^^^^^^^^^ use of undeclared crate or module `rust_decimal`
+
+error[E0432]: unresolved import `rust_decimal`
+  --> src/stock_market_ohlcv.rs:18:5
+   |
+18 | use rust_decimal::{
+   |     ^^^^^^^^^^^^ use of undeclared crate or module `rust_decimal`
+
+error[E0432]: unresolved import `rust_decimal_macros`
+  --> src/stock_market_ohlcv.rs:22:5
+   |
+22 | use rust_decimal_macros::dec;
+   |     ^^^^^^^^^^^^^^^^^^^ use of undeclared crate or module `rust_decimal_macros`
+
+error[E0599]: no method named `to_usize` found for type `u16` in the current scope
+   --> src/stock_market_ohlcv.rs:152:51
+    |
+152 |             let closing_price = &closing_prices[x.to_usize().unwrap()];
+    |                                                   ^^^^^^^^
+    |
+    = help: items from traits can only be used if the trait is in scope
+help: the following traits which provide `to_usize` are implemented but not in scope; perhaps you want to import one of them
+    |
+4   + use bitflags::core::core_simd::masks::sealed::Sealed;
+    |
+4   + use num_traits::cast::ToPrimitive;
+    |
+4   + use syntex_pos::Pos;
+    |
+4   + use winnow::stream::ToUsize;
+    |
+help: there is a method `to_isize` with a similar name
+    |
+152 |             let closing_price = &closing_prices[x.to_isize().unwrap()];
+    |                                                   ~~~~~~~~
+
+error[E0599]: no method named `to_usize` found for type `u16` in the current scope
+   --> src/stock_market_ohlcv.rs:164:69
+    |
+164 |         let mut tail_closing_day_idx: usize = (ma_days_idx_end + 1).to_usize().unwrap();
+    |                                                                     ^^^^^^^^
+    |
+    = help: items from traits can only be used if the trait is in scope
+help: the following traits which provide `to_usize` are implemented but not in scope; perhaps you want to import one of them
+    |
+4   + use bitflags::core::core_simd::masks::sealed::Sealed;
+    |
+4   + use num_traits::cast::ToPrimitive;
+    |
+4   + use syntex_pos::Pos;
+    |
+4   + use winnow::stream::ToUsize;
+    |
+help: there is a method `to_isize` with a similar name
+    |
+164 |         let mut tail_closing_day_idx: usize = (ma_days_idx_end + 1).to_isize().unwrap();
+    |                                                                     ~~~~~~~~
+
+warning: use of deprecated method `chrono::DateTime::<Tz>::date`: Use `date_naive()` instead
+   --> src/stock_market_ohlcv.rs:214:33
+    |
+214 |                 stock_data.date.date(),
+    |                                 ^^^^
+    |
+    = note: `#[warn(deprecated)]` on by default
+
+error[E0599]: no method named `NaiveDate` found for struct `DateTime` in the current scope
+   --> src/stock_market_ohlcv.rs:228:39
+    |
+228 |             stock_data_series[0].date.NaiveDate() - Duration::days(1),
+    |                                       ^^^^^^^^^ method not found in `DateTime<Utc>`
+
+error[E0599]: no method named `NaiveDate` found for struct `DateTime` in the current scope
+   --> src/stock_market_ohlcv.rs:231:18
+    |
+229 | /             stock_data_series[stock_data_series_last_day_idx]
+230 | |                 .date
+231 | |                 .NaiveDate()
+    | |                 -^^^^^^^^^ method not found in `DateTime<Utc>`
+    | |_________________|
+    |
+
+error[E0599]: no method named `into_font` found for tuple `(&'static str, {float})` in the current scope
+   --> src/stock_market_ohlcv.rs:251:47
+    |
+251 |         let font_style = ("sans-serif", 25.0).into_font();
+    |                                               ^^^^^^^^^ method not found in `(&str, {float})`
+
+error[E0599]: no method named `to_usize` found for reference `&u16` in the current scope
+   --> src/stock_market_ohlcv.rs:287:45
+    |
+287 |                     let ma_day = i + ma_day.to_usize().unwrap() - 1;
+    |                                             ^^^^^^^^
+    |
+    = help: items from traits can only be used if the trait is in scope
+help: the following traits which provide `to_usize` are implemented but not in scope; perhaps you want to import one of them
+    |
+4   + use bitflags::core::core_simd::masks::sealed::Sealed;
+    |
+4   + use num_traits::cast::ToPrimitive;
+    |
+4   + use syntex_pos::Pos;
+    |
+4   + use winnow::stream::ToUsize;
+    |
+help: there is a method `to_isize` with a similar name
+    |
+287 |                     let ma_day = i + ma_day.to_isize().unwrap() - 1;
+    |                                             ~~~~~~~~
+
+error[E0599]: no method named `NaiveDate` found for struct `DateTime` in the current scope
+   --> src/stock_market_ohlcv.rs:289:56
+    |
+289 |                         stock_data_series[ma_day].date.NaiveDate(),
+    |                                                        ^^^^^^^^^ method not found in `DateTime<Utc>`
+
+Some errors have detailed explanations: E0432, E0433, E0583, E0599.
+For more information about an error, try `rustc --explain E0432`.
+warning: `rust_plotters_stock_market_ohlcv` (bin "rust_plotters_stock_market_ohlcv" test) generated 1 warning
+error: could not compile `rust_plotters_stock_market_ohlcv` (bin "rust_plotters_stock_market_ohlcv" test) due to 12 previous errors; 1 warning emitted

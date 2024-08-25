@@ -71,12 +71,16 @@ cargo build
 
 ```bash
 cargo add chrono
+cargo add plotters
 cargo add decimal
+cargo add rust_decimal
+cargo add rust_decimal_macros
+#
 cargo add num_traits
 cargo add plotters
 cargo add rand
-cargo add rust_decimal
-cargo add rust_decimal_macros
+
+
 cargo add ta
 cargo add csv
 cargo add rust_decimal

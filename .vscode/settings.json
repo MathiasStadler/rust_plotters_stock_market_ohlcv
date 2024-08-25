@@ -1,8 +1,17 @@
 {
     "cSpell.words": [
+        "BNCRP",
+        "Corpo",
+        "datetime",
+        "fract",
+        "KAMOTE",
+        "libfontconfig",
+        "libfreetype",
         "ohlcv",
         "rustfmt",
         "rustlib",
-        "sysroot"
+        "serde",
+        "sysroot",
+        "trunc"
     ]
 }
