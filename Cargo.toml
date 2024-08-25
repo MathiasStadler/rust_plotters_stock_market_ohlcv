@@ -1,0 +1,8 @@
+[package]
+name = "rust_plotters_stock_market_ohlcv"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+cargo-edit = "0.12.3"
+rustfmt = "0.10.0"
