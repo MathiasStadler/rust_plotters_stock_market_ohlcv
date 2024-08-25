@@ -1625,6 +1625,7 @@ dependencies = [
  "chrono",
  "decimal",
  "plotters",
+ "rand 0.8.5",
  "rust_decimal",
  "rust_decimal_macros",
  "rustfmt",
